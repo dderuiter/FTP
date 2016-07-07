@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="800.0" style="-fx-text-fill: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deruiter.ftp.controller.ClientController">
+   <children>
+      <HBox layoutX="200.0" layoutY="14.0" prefWidth="200.0" styleClass="connection-options" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-text-fill: #0cef94;" text="Host:">
+               <padding>
+                  <Insets right="5.0" />
+               </padding></Label>
+            <TextField fx:id="host" maxWidth="120.0" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-text-fill: #0cef94;" text="Username:">
+               <padding>
+                  <Insets left="20.0" right="5.0" />
+               </padding></Label>
+            <TextField fx:id="username" maxWidth="150.0" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-text-fill: #0cef94;" text="Password:">
+               <padding>
+                  <Insets left="20.0" right="5.0" />
+               </padding></Label>
+            <PasswordField fx:id="password" maxWidth="160.0" />
+            <Label maxHeight="1.7976931348623157E308" style="-fx-text-fill: #0cef94;" text="Port:">
+               <padding>
+                  <Insets left="20.0" right="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="port" maxWidth="75.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <Separator AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+      <HBox AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleConnect" text="Connect">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleDisconnect" text="Disconnect" />
+            <CheckBox fx:id="showHiddenFiles" maxHeight="1.7976931348623157E308" mnemonicParsing="false" text="Show Hidden Files" textFill="#ffffff">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </CheckBox>
+         </children>
+      </HBox>
+      <Circle fx:id="statusIndicator" fill="#f44362" layoutX="768.0" layoutY="63.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label fx:id="statusInfo" layoutX="663.0" layoutY="55.0" maxHeight="1.7976931348623157E308" style="-fx-text-fill: #ffffff;" text="No connection" />
+      <Label layoutX="160.0" layoutY="203.0" style="-fx-font-weight: bold; -fx-text-fill: #0cef94; -fx-font-size: 14px;" text="Local Client" AnchorPane.topAnchor="203.0" />
+      <Label layoutX="549.0" layoutY="203.0" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #0cef94;" text="Remote Server" AnchorPane.topAnchor="203.0" />
+      <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="229.0" maxHeight="435.0" maxWidth="1.7976931348623157E308" minHeight="435.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TreeView fx:id="clientTree" layoutX="95.0" layoutY="63.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TreeView fx:id="serverTree" layoutX="78.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button layoutX="557.0" layoutY="676.0" mnemonicParsing="false" onAction="#handleUpload" text="Upload" />
+      <Button layoutX="629.0" layoutY="676.0" mnemonicParsing="false" onAction="#handleDownload" text="Download" />
+      <Button layoutX="730.0" layoutY="676.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+      <Separator layoutX="717.0" layoutY="676.0" orientation="VERTICAL" prefHeight="26.0" prefWidth="0.0" />
+      <ProgressBar fx:id="progressBar" layoutX="10.0" layoutY="516.0" prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="32.0" layoutX="655.0" layoutY="47.0" stroke="#d7d7d7" strokeType="INSIDE" width="140.0" AnchorPane.rightAnchor="10.0" />
+      <TextArea fx:id="connectionDetails" editable="false" layoutX="54.0" layoutY="38.0" prefHeight="80.0" prefWidth="200.0" style="-fx-text-fill:#ffffff;" styleClass="connection-details" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="90.0" />
+      <Button layoutX="14.0" layoutY="676.0" mnemonicParsing="false" onAction="#handleHelp" style="-fx-font-weight: bold;" text="?" />
+   </children>
+</AnchorPane>

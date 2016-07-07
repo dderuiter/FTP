@@ -1,0 +1,70 @@
+/**********************************************************************************************************************
+ *
+ * WARNING:
+ * Copyright Ⓒ 2016 by D.DeRuiter
+ * Do not use, modify, or distribute in any way without express written consent.
+ *
+ * PROJECT:
+ * FTP (Freakin Terrific Program)
+ *
+ * DESCRIPTION:
+ * CSS style class for web site.
+ *
+ * AUTHOR:
+ * Davis DeRuiter
+ *
+ * DATE CREATED:
+ * 03/11/2016
+ *
+ **********************************************************************************************************************/
+
+.background {
+    -fx-background-color: #2f2f2f;
+}
+
+.connection-options {
+    -fx-background-color: #6E6E6E;
+}
+
+.connection-details .content {
+    -fx-background-color: #6E6E6E;
+}
+
+.tree-cell:hover {
+    -fx-background-color: yellow ;
+}
+
+.tree-cell:empty {
+    -fx-background-color: #6E6E6E;
+}
+
+.tree-cell:expanded {
+    -fx-background-color: #6E6E6E;
+    -fx-text-fill: white;
+}
+
+.tree-cell:collapsed {
+    -fx-background-color: #6E6E6E;
+    -fx-text-fill: white;
+}
+
+.tree-cell:selected {
+    -fx-text-fill: #32B7B7;
+}
+
+.tree-cell:hover {
+    -fx-text-fill: #32B7B7;
+}
+
+/* Save for possible future use */
+/*
+.tree-cell:selected {
+    -fx-text-fill: red ;
+    -fx-background-color: #0093ff ;
+}
+
+.tree-cell:collapsed{
+    -fx-background-color: #6E6E6E;
+    -fx-text-fill: whitesmoke;
+}
+*/

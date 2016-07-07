@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Freakin Teriffic Program">
+    <output-path>$PROJECT_DIR$/out/artifacts/Freakin_Teriffic_Program</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.deruiter.ftp.main.Main" />
+        <option name="convertCss2Bin" value="true" />
+        <option name="description" value="This program uploads and downloads files using FTP protocol." />
+        <option name="height" value="750" />
+        <option name="htmlParamFile" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="paramFile" value="" />
+        <option name="title" value="Freakin Terrific Program" />
+        <option name="vendor" value="Zafir Xing Inc." />
+        <option name="width" value="800" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="FTP.jar">
+        <element id="module-output" name="FTP" />
+        <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+        <element id="library" level="project" name="Maven: commons-net:commons-net:3.3" />
+      </element>
+    </root>
+  </artifact>
+</component>
